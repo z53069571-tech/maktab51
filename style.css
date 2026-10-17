@@ -205,6 +205,9 @@ ul.plain{list-style:none;margin:0;padding:0}
 
 /* timetable */
 .cap{margin:0 0 12px;color:var(--muted);font-size:var(--fs-s)}
+.cls-pick{display:flex;gap:12px;margin:0 0 12px}
+.cls-pick label{display:flex;flex-direction:column;gap:4px;flex:1;color:var(--muted);font-size:var(--fs-s)}
+.cls-pick select{min-height:44px;padding:0 12px;background:var(--surface);color:var(--ink);border:1px solid var(--line);border-radius:9px;font:500 var(--fs-m)/1 var(--f-body)}
 .tabs{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:4px;margin-bottom:16px;padding:4px;background:var(--tint);border:1px solid var(--line);border-radius:12px}
 .tab{position:relative;min-height:44px;padding:0 4px;background:transparent;color:var(--ink);border:0;border-radius:9px;font:500 .9375rem/1 var(--f-body);cursor:pointer;transition:background-color .15s,color .15s,box-shadow .15s}
 .tab:hover{background:var(--surface)}
@@ -246,4 +249,4 @@ footer p{margin:0}
 @media (max-width:760px){
   .about{grid-template-columns:minmax(0,1fr);gap:28px}
   section{padding-block:36px}
-}
+}                                                                                                                                                                                                                                                                                                                                                                                                                                          }
