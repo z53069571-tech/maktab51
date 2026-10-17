@@ -18,9 +18,7 @@
       badge: "Namuna",
       note_text: "Bu sayt boshlang‘ich holatda. Yangiliklar, jadval va pedagoglar ro‘yxati maktabning haqiqiy ma’lumotlari bilan almashtiriladi.",
       news_intro: "Maktab hayotidan so‘nggi e’lonlar.",
-      n1_date: "Oktabr 2026", n1_title: "Birinchi chorak yakunlari", n1_text: "Chorak natijalarini sinf rahbarlari ota-onalarga taqdim etadi.",
-      n2_date: "Noyabr 2026", n2_title: "Ota-onalar yig‘ilishi", n2_text: "Yig‘ilish sanasi va vaqti sinf rahbarlari orqali e’lon qilinadi.",
-      n3_date: "Noyabr 2026", n3_title: "Sinflararo sport musobaqasi", n3_text: "Sinflar o‘rtasidagi musobaqa tartibi jismoniy tarbiya o‘qituvchilari tomonidan e’lon qilinadi.",
+      news_empty: "Hozircha yangiliklar yo‘q.", nav_res: "Natijalar", tile_res_sub: "Yutuq va natijalar", res_intro: "O‘quvchilarimizning yutuqlari va natijalari.", res_empty: "Natijalar hali kiritilmagan.",
       about_intro: "O‘quvchilar, ota-onalar va pedagoglar uchun.",
       about_p1: "51-sonli maktab Nukus shahrining Boz Awil hududida joylashgan umumiy o‘rta ta’lim maktabi. Bu yerda o‘quvchilar bilim oladi, kitob o‘qiydi, sport bilan shug‘ullanadi va do‘st orttiradi.",
       about_p2: "Saytda dars jadvalini ko‘rish, yangiliklarni kuzatish va maktab bilan bog‘lanish mumkin.",
@@ -61,9 +59,7 @@
       badge: "Úlgi",
       note_text: "Bul sayt dáslepki jaǵdayda. Jańalıqlar, keste hám pedagoglar dizimi mekteptiń haqıyqıy maǵlıwmatları menen almastırıladı.",
       news_intro: "Mektep turmısınan sońǵı xabarlar.",
-      n1_date: "Oktyabr 2026", n1_title: "Birinshi shiyrek juwmaqları", n1_text: "Shiyrek nátiyjelerin klass basshıları ata-analarǵa usınadı.",
-      n2_date: "Noyabr 2026", n2_title: "Ata-analar jıynalısı", n2_text: "Jıynalıs sanası hám waqtı klass basshıları arqalı járiyalanadı.",
-      n3_date: "Noyabr 2026", n3_title: "Klasslar aralıq sport jarısı", n3_text: "Klasslar arasındaǵı jarıs tártibin denetárbiya muǵallimleri járiyalaydı.",
+      news_empty: "Házirshe jańalıqlar joq.", nav_res: "Nátiyjeler", tile_res_sub: "Jetiskenlikler hám nátiyjeler", res_intro: "Oqıwshılarımızdıń jetiskenlikleri hám nátiyjeleri.", res_empty: "Nátiyjeler ele kiritilmegen.",
       about_intro: "Oqıwshılar, ata-analar hám pedagoglar ushın.",
       about_p1: "51-sanlı mektep Nókis qalasınıń Boz awıl aymaǵında jaylasqan ulıwma orta bilim beriw mektebi. Bul jerde oqıwshılar bilim aladı, kitap oqıydı, sport penen shuǵıllanadı hám dos ortıradı.",
       about_p2: "Saytta sabaq kestesin kóriw, jańalıqlardı baqlaw hám mektep penen baylanısıw múmkin.",
@@ -104,9 +100,7 @@
       badge: "Образец",
       note_text: "Сайт пока в начальном виде. Новости, расписание и список педагогов будут заменены реальными данными школы.",
       news_intro: "Последние объявления из жизни школы.",
-      n1_date: "Октябрь 2026", n1_title: "Итоги первой четверти", n1_text: "Классные руководители сообщат родителям результаты четверти.",
-      n2_date: "Ноябрь 2026", n2_title: "Родительское собрание", n2_text: "Дата и время собрания будут объявлены через классных руководителей.",
-      n3_date: "Ноябрь 2026", n3_title: "Спортивные соревнования между классами", n3_text: "Порядок соревнований между классами объявят учителя физкультуры.",
+      news_empty: "Пока новостей нет.", nav_res: "Результаты", tile_res_sub: "Достижения и итоги", res_intro: "Достижения и результаты наших учеников.", res_empty: "Результаты пока не добавлены.",
       about_intro: "Для учеников, родителей и педагогов.",
       about_p1: "Школа № 51 — общеобразовательная школа, расположенная в районе Боз Авил города Нукус. Здесь ученики получают знания, читают книги, занимаются спортом и находят друзей.",
       about_p2: "На сайте можно посмотреть расписание, следить за новостями и связаться со школой.",
@@ -147,9 +141,7 @@
       badge: "Sample",
       note_text: "This site is a starter version. News, the timetable and the teacher list will be replaced with the school’s real information.",
       news_intro: "Latest announcements from school life.",
-      n1_date: "October 2026", n1_title: "First quarter results", n1_text: "Class teachers will share the quarter results with parents.",
-      n2_date: "November 2026", n2_title: "Parents’ meeting", n2_text: "The date and time will be announced by class teachers.",
-      n3_date: "November 2026", n3_title: "Inter-class sports competition", n3_text: "Physical education teachers will announce the competition schedule.",
+      news_empty: "No news yet.", nav_res: "Results", tile_res_sub: "Achievements and results", res_intro: "Achievements and results of our students.", res_empty: "No results have been added yet.",
       about_intro: "For students, parents and teachers.",
       about_p1: "School No. 51 is a general secondary school in the Boz Awil area of Nukus city. Students here learn, read, play sports and make friends.",
       about_p2: "On this site you can check the timetable, follow the news and get in touch with the school.",
@@ -403,13 +395,13 @@
     if (!menu.hidden) setMenu(false, true);
   });
   window.addEventListener("resize", function () {
-    if (!menu.hidden && window.innerWidth >= 960) setMenu(false, false);
+    if (!menu.hidden && window.innerWidth >= 1200) setMenu(false, false);
   });
 
   // ---------- Bo‘limlar: har biri alohida oynada ochiladi ----------
   var views = Array.prototype.slice.call(document.querySelectorAll("[data-view]"));
   var navLinks = Array.prototype.slice.call(document.querySelectorAll(".nav a, .menu-list a"));
-  var IDS = ["bosh", "yangiliklar", "haqida", "jadval", "pedagoglar", "aloqa"];
+  var IDS = ["bosh", "yangiliklar", "haqida", "jadval", "natijalar", "pedagoglar", "aloqa"];
   function show(id, scroll) {
     if (IDS.indexOf(id) < 0) id = "bosh";
     views.forEach(function (v) { v.hidden = v.getAttribute("data-view") !== id; });
