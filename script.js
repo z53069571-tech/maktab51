@@ -470,4 +470,4 @@
   applyLang(saved);
   setInterval(tick, 30000);
 })();
-  
+      
