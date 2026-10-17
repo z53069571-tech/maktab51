@@ -30,7 +30,7 @@
       f_school: "Maktab", f_school_v: "51-sonli", f_addr: "Manzil", f_addr_v: "Nukus shahri, Boz Awil",
       f_type: "Ta’lim turi", f_type_v: "Umumiy o‘rta ta’lim", f_year: "O‘quv yili",
       tt_intro: "Kunni tanlang. Sariq nuqta bugungi kunni, sariq qator davom etayotgan darsni bildiradi.",
-      tt_cap: "7-sinf · namuna jadval", th_lesson: "Dars", th_time: "Vaqt", th_subject: "Fan", badge_now: "Hozir",
+      tt_cap: "{c} sinf", th_lesson: "Dars", th_time: "Vaqt", th_subject: "Fan", badge_now: "Hozir", tt_none: "Bu sinf uchun jadval hali kiritilmagan.", st_none: "Bu sinf jadvali hali kiritilmagan.", lbl_grade: "Sinf", lbl_letter: "Harf",
       st_rest: "Bugun dam olish kuni. Darslar dushanba kuni boshlanadi.",
       st_before: "Darslar {t} da boshlanadi.",
       st_break: "Tanaffus. {n}-dars {t} da boshlanadi.",
@@ -73,7 +73,7 @@
       f_school: "Mektep", f_school_v: "51-sanlı", f_addr: "Mánzil", f_addr_v: "Nókis qalası, Boz awıl",
       f_type: "Bilim beriw túri", f_type_v: "Ulıwma orta bilim", f_year: "Oqıw jılı",
       tt_intro: "Kúndi tańlań. Sarı noqat búgingi kúndi, sarı qatar dawam etip atırǵan sabaqtı bildiredi.",
-      tt_cap: "7-klass · úlgi keste", th_lesson: "Sabaq", th_time: "Waqıt", th_subject: "Pán", badge_now: "Házir",
+      tt_cap: "{c} klass", th_lesson: "Sabaq", th_time: "Waqıt", th_subject: "Pán", badge_now: "Házir", tt_none: "Bul klass ushın keste ele kiritilmegen.", st_none: "Bul klass kestesi ele kiritilmegen.", lbl_grade: "Klass", lbl_letter: "Hárip",
       st_rest: "Búgin dem alıs kúni. Sabaqlar dúyshembi kúni baslanadı.",
       st_before: "Sabaqlar baslanıwı: {t}.",
       st_break: "Úzilis. Keyingi sabaq ({n}-sabaq): {t}.",
@@ -116,7 +116,7 @@
       f_school: "Школа", f_school_v: "№ 51", f_addr: "Адрес", f_addr_v: "г. Нукус, Боз Авил",
       f_type: "Тип образования", f_type_v: "Общее среднее образование", f_year: "Учебный год",
       tt_intro: "Выберите день. Жёлтая точка — сегодняшний день, жёлтая строка — идущий урок.",
-      tt_cap: "7 класс · образец расписания", th_lesson: "Урок", th_time: "Время", th_subject: "Предмет", badge_now: "Сейчас",
+      tt_cap: "{c} класс", th_lesson: "Урок", th_time: "Время", th_subject: "Предмет", badge_now: "Сейчас", tt_none: "Расписание для этого класса пока не добавлено.", st_none: "Расписание этого класса пока не добавлено.", lbl_grade: "Класс", lbl_letter: "Буква",
       st_rest: "Сегодня выходной. Уроки начнутся в понедельник.",
       st_before: "Уроки начнутся в {t}.",
       st_break: "Перемена. {n}-й урок начнётся в {t}.",
@@ -159,7 +159,7 @@
       f_school: "School", f_school_v: "No. 51", f_addr: "Address", f_addr_v: "Nukus city, Boz Awil",
       f_type: "Education type", f_type_v: "General secondary education", f_year: "School year",
       tt_intro: "Choose a day. The yellow dot marks today, the yellow row marks the lesson in progress.",
-      tt_cap: "Grade 7 · sample timetable", th_lesson: "Lesson", th_time: "Time", th_subject: "Subject", badge_now: "Now",
+      tt_cap: "Class {c}", th_lesson: "Lesson", th_time: "Time", th_subject: "Subject", badge_now: "Now", tt_none: "No timetable has been added for this class yet.", st_none: "No timetable has been added for this class yet.", lbl_grade: "Class", lbl_letter: "Letter",
       st_rest: "Today is a day off. Lessons start on Monday.",
       st_before: "Lessons start at {t}.",
       st_break: "Break. Lesson {n} starts at {t}.",
@@ -183,14 +183,20 @@
 
   // ---------- Namuna jadval ----------
   var BELLS = [["08:00","08:45"],["08:55","09:40"],["09:50","10:35"],["10:55","11:40"],["11:50","12:35"],["12:45","13:30"],["13:40","14:25"]];
-  var PLAN = [
-    ["s_lang","s_math","s_eng","s_phys","s_hist","s_pe"],
-    ["s_algebra","s_lit","s_bio","s_eng","s_it","s_geo"],
-    ["s_lang","s_geometry","s_rus","s_hist","s_tech"],
-    ["s_math","s_phys","s_lit","s_eng","s_music","s_pe"],
-    ["s_algebra","s_lang","s_geo","s_bio","s_it","s_art"],
-    ["s_geometry","s_rus","s_lit","s_hist","s_classhour"]
-  ];
+  var GRADES = 11, LETTERS = ["A","B","D"];
+  // Har sinf: "sinf-harf": [dushanba, ..., shanba]. Fan: tayyor kalit (s_math) yoki oddiy matn.
+  var TT = {
+    "7-A": [
+        ["s_lang","s_math","s_eng","s_phys","s_hist","s_pe"],
+        ["s_algebra","s_lit","s_bio","s_eng","s_it","s_geo"],
+        ["s_lang","s_geometry","s_rus","s_hist","s_tech"],
+        ["s_math","s_phys","s_lit","s_eng","s_music","s_pe"],
+        ["s_algebra","s_lang","s_geo","s_bio","s_it","s_art"],
+        ["s_geometry","s_rus","s_lit","s_hist","s_classhour"]
+    ]
+  };
+  var EMPTY = [[],[],[],[],[],[]];
+  var cls = "7-A", PLAN = TT[cls];
 
   function toMin(s) { var a = s.split(":"); return parseInt(a[0], 10) * 60 + parseInt(a[1], 10); }
 
@@ -216,6 +222,7 @@
   function lessonState(day, min) {
     if (day > 5) return { t: "rest" };
     var n = PLAN[day].length;
+    if (!n) return { t: "none" };
     for (var i = 0; i < n; i++) {
       var s = toMin(BELLS[i][0]), e = toMin(BELLS[i][1]);
       if (min < s) return { t: i === 0 ? "before" : "break", next: i };
@@ -224,11 +231,14 @@
     return { t: "done" };
   }
 
+  function subj(key) { return STR.uz[key] !== undefined ? t(key) : key; }
+
   function statusText(n, st) {
     if (st.t === "rest") return t("st_rest");
+    if (st.t === "none") return t("st_none");
     if (st.t === "before") return fmt(t("st_before"), { t: BELLS[0][0] });
     if (st.t === "break") return fmt(t("st_break"), { n: st.next + 1, t: BELLS[st.next][0] });
-    if (st.t === "lesson") return fmt(t("st_lesson"), { n: st.i + 1, t: BELLS[st.i][1], s: t(PLAN[n.day][st.i]) });
+    if (st.t === "lesson") return fmt(t("st_lesson"), { n: st.i + 1, t: BELLS[st.i][1], s: subj(PLAN[n.day][st.i]) });
     return t("st_done");
   }
 
@@ -246,11 +256,12 @@
     PLAN[sel].forEach(function (key, i) {
       var live = sel === n.day && st.t === "lesson" && st.i === i;
       html += '<tr' + (live ? ' class="is-now"' : '') + '><th scope="row">' + (i + 1) + '</th><td>' +
-        BELLS[i][0] + '–' + BELLS[i][1] + '</td><td>' + t(key) +
+        BELLS[i][0] + '–' + BELLS[i][1] + '</td><td>' + subj(key) +
         (live ? '<span class="badge">' + t("badge_now") + '</span>' : '') + '</td></tr>';
     });
+    if (!PLAN[sel].length) html = '<tr><td colspan="3">' + t("tt_none") + '</td></tr>';
     bodyEl.innerHTML = html;
-    document.getElementById("tt-cap").textContent = t("tt_cap");
+    document.getElementById("tt-cap").textContent = fmt(t("tt_cap"), { c: cls });
     document.getElementById("tt-day").textContent = t("days_full")[sel];
   }
 
@@ -277,6 +288,23 @@
       tabBtns.push(b);
     })(di);
   }
+  var gradeEl = document.getElementById("sel-grade"), letterEl = document.getElementById("sel-letter");
+  for (var g = 1; g <= GRADES; g++) gradeEl.add(new Option(g, g));
+  LETTERS.forEach(function (l) { letterEl.add(new Option(l, l)); });
+  function setClass(g, l) {
+    cls = g + "-" + l;
+    PLAN = TT[cls] || EMPTY;
+    gradeEl.value = g; letterEl.value = l;
+    try { localStorage.setItem("cls51", cls); } catch (err) { /* hech narsa */ }
+  }
+  var saved = null;
+  try { saved = /^(\d+)-(.+)$/.exec(localStorage.getItem("cls51") || ""); } catch (err) { /* hech narsa */ }
+  if (saved && +saved[1] >= 1 && +saved[1] <= GRADES && LETTERS.indexOf(saved[2]) >= 0) setClass(+saved[1], saved[2]);
+  else setClass(7, LETTERS[0]);
+  function onPick() { setClass(+gradeEl.value, letterEl.value); tick(); }
+  gradeEl.addEventListener("change", onPick);
+  letterEl.addEventListener("change", onPick);
+
   tabsEl.addEventListener("keydown", function (e) {
     if (e.key !== "ArrowRight" && e.key !== "ArrowLeft") return;
     var step = e.key === "ArrowRight" ? 1 : -1;
@@ -450,4 +478,4 @@
   applyLang(saved);
   setInterval(tick, 30000);
 })();
-      
+  
