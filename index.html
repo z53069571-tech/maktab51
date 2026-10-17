@@ -1,194 +1,322 @@
+<!doctype html>
+<html lang="uz">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#071E31">
+<meta name="description" content="Nukus shahri, Boz Awil hududidagi 51-sonli maktab sayti: yangiliklar, dars jadvali, pedagoglar va aloqa.">
 <title>51-sonli maktab</title>
-<meta name="claude:viewport-fit-sides" content="cover">
-
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%230B3C5D'/%3E%3Ctext x='32' y='43' font-family='Arial' font-weight='800' font-size='32' text-anchor='middle' fill='white'%3E51%3C/text%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500..800&family=Onest:wght@400..700&display=swap">
-:root {
-  --bg: #F2F6F7;
-  --surface: #FFFFFF;
-  --tint: #E4EDF0;
-  --ink: #0E2330;
-  --muted: #51677A;
-  --line: #D5E0E4;
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <symbol id="horn" viewBox="0 0 48 48">
+    <g style="fill:none;stroke:currentColor;stroke-width:3;stroke-linecap:round;stroke-linejoin:round">
+      <path d="M24 42 C24 32 8 34 8 22 C8 14 14 8 21 10 C27 12 26 20 20 20 C16 20 15 16 18 15"/>
+      <path d="M24 42 C24 32 8 34 8 22 C8 14 14 8 21 10 C27 12 26 20 20 20 C16 20 15 16 18 15" transform="translate(48 0) scale(-1 1)"/>
+    </g>
+  </symbol>
+  <symbol id="chev-down" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+</svg>
 
-  --blue: #0B3C5D;
-  --blue-ink: #FFFFFF;
-  --blue-hover: #0F4C74;
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="#bosh" data-i-aria="brand_home" aria-label="51-sonli maktab, bosh sahifa">
+      <span class="brand-plate">51</span>
+      <span class="brand-text"><b data-i="brand_name">51-sonli maktab</b><small data-i="brand_sub">Nukus · Boz Awil</small></span>
+    </a>
+    <nav class="nav" data-i-aria="sections_label" aria-label="Bo‘limlar">
+      <a href="#bosh" data-i="nav_home">Bosh sahifa</a>
+      <a href="#yangiliklar" data-i="nav_news">Yangiliklar</a>
+      <a href="#haqida" data-i="nav_about">Maktab haqida</a>
+      <a href="#jadval" data-i="nav_tt">Dars jadvali</a>
+      <a href="#pedagoglar" data-i="nav_staff">Pedagoglar</a>
+      <a href="#aloqa" data-i="nav_contact">Aloqa</a>
+    </nav>
+    <div class="top-actions">
+      <div class="langbox">
+        <button class="lang-btn" type="button" aria-haspopup="true" aria-expanded="false" data-i-aria="lang_label" aria-label="Til"><span class="lang-code">UZ</span><svg aria-hidden="true" focusable="false"><use href="#chev-down"/></svg></button>
+        <ul class="lang-list" hidden>
+          <li><button type="button" data-lang="uz" lang="uz">O‘zbekcha</button></li>
+          <li><button type="button" data-lang="qq" lang="kaa">Qaraqalpaqsha</button></li>
+          <li><button type="button" data-lang="ru" lang="ru">Русский</button></li>
+          <li><button type="button" data-lang="en" lang="en">English</button></li>
+        </ul>
+      </div>
+      <button class="icon-btn" id="bigtext" type="button" aria-pressed="false" data-i-aria="bigtext" data-i-title="bigtext" aria-label="Katta shrift" title="Katta shrift">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="6.5" cy="14" r="3.5"/><circle cx="17.5" cy="14" r="3.5"/><path d="M10 14h4M3 14l1.5-6M21 14l-1.5-6"/></svg>
+      </button>
+      <button class="icon-btn burger" id="burger" type="button" aria-expanded="false" aria-controls="menu" data-i-aria="menu_open" aria-label="Menyuni ochish">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true" focusable="false"><path d="M4 7h16M10 12h10M4 17h16"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
 
-  --sand: #E0A526;
-  --sand-ink: #2A1D00;
+<div class="menu" id="menu" role="dialog" aria-modal="true" data-i-aria="menu_title" aria-label="Menyu" hidden>
+  <div class="wrap menu-head">
+    <a class="brand" href="#bosh" data-i-aria="brand_home" aria-label="51-sonli maktab, bosh sahifa">
+      <span class="brand-plate">51</span>
+      <span class="brand-text"><b data-i="brand_name">51-sonli maktab</b><small data-i="brand_sub">Nukus · Boz Awil</small></span>
+    </a>
+    <div class="menu-actions">
+      <div class="langbox">
+        <button class="lang-btn" type="button" aria-haspopup="true" aria-expanded="false" data-i-aria="lang_label" aria-label="Til"><span class="lang-code">UZ</span><svg aria-hidden="true" focusable="false"><use href="#chev-down"/></svg></button>
+        <ul class="lang-list" hidden>
+          <li><button type="button" data-lang="uz" lang="uz">O‘zbekcha</button></li>
+          <li><button type="button" data-lang="qq" lang="kaa">Qaraqalpaqsha</button></li>
+          <li><button type="button" data-lang="ru" lang="ru">Русский</button></li>
+          <li><button type="button" data-lang="en" lang="en">English</button></li>
+        </ul>
+      </div>
+      <button class="icon-btn" id="menu-close" type="button" data-i-aria="menu_close" aria-label="Menyuni yopish">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true" focusable="false"><path d="M5 5l14 14M19 5L5 19"/></svg>
+      </button>
+    </div>
+  </div>
+  <div class="wrap">
+    <nav class="menu-list" data-i-aria="sections_label" aria-label="Bo‘limlar">
+      <a href="#bosh"><span data-i="nav_home">Bosh sahifa</span><svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M9 6l6 6-6 6"/></svg></a>
+      <a href="#yangiliklar"><span data-i="nav_news">Yangiliklar</span><svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M9 6l6 6-6 6"/></svg></a>
+      <a href="#haqida"><span data-i="nav_about">Maktab haqida</span><svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M9 6l6 6-6 6"/></svg></a>
+      <a href="#jadval"><span data-i="nav_tt">Dars jadvali</span><svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M9 6l6 6-6 6"/></svg></a>
+      <a href="#pedagoglar"><span data-i="nav_staff">Pedagoglar</span><svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M9 6l6 6-6 6"/></svg></a>
+      <a href="#aloqa"><span data-i="nav_contact">Aloqa</span><svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M9 6l6 6-6 6"/></svg></a>
+    </nav>
+  </div>
+  <div class="menu-foot">
+    <div class="wrap">
+      <small data-i="c_tel">Telefon</small>
+      <p class="phone" data-i="c_tel_v">Raqam kiritiladi</p>
+      <ul class="socials" data-i-aria="soc_label" aria-label="Ijtimoiy tarmoqlar (havolalar keyin qo‘shiladi)">
+        <li class="soc" title="Telegram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-label="Telegram"><path d="M21 4 3 11.2l5.6 2.1L10.7 20l3-3.9 4.8 3.6L21 4z"/><path d="M8.6 13.3 21 4"/></svg></li>
+        <li class="soc" title="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-label="Instagram"><rect x="4" y="4" width="16" height="16" rx="5"/><circle cx="12" cy="12" r="3.8"/><circle cx="17" cy="7" r=".6"/></svg></li>
+        <li class="soc" title="Facebook"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-label="Facebook"><path d="M14 21v-8h3l.5-3.5H14V7.7c0-1 .4-1.7 1.8-1.7h1.8V3.1C17.3 3 16.2 3 15 3c-2.6 0-4.3 1.6-4.3 4.4v2.1H8V13h2.7v8"/></svg></li>
+        <li class="soc" title="YouTube"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-label="YouTube"><rect x="3" y="6" width="18" height="12" rx="4"/><path d="M10.5 9.5v5l4.2-2.5z"/></svg></li>
+      </ul>
+    </div>
+  </div>
+</div>
 
-  --link: #0A6A8F;
-  --orn: #9DB8C2;
+<div class="hero" id="bosh" data-view="bosh">
+  <div class="hero-art" aria-hidden="true">
+    <svg viewBox="0 0 400 240" preserveAspectRatio="xMidYMax slice" focusable="false">
+      <g fill="#FFFFFF" fill-opacity=".07">
+        <rect x="14" y="112" width="372" height="128"/>
+        <rect x="146" y="64" width="108" height="176"/>
+        <path d="M136 66 L200 30 L264 66 Z"/>
+      </g>
+      <g fill="#FFFFFF" fill-opacity=".15">
+        <path d="M34 204 V158 a10 10 0 0 1 20 0 V204 Z"/>
+        <path d="M70 204 V158 a10 10 0 0 1 20 0 V204 Z"/>
+        <path d="M106 204 V158 a10 10 0 0 1 20 0 V204 Z"/>
+        <path d="M274 204 V158 a10 10 0 0 1 20 0 V204 Z"/>
+        <path d="M310 204 V158 a10 10 0 0 1 20 0 V204 Z"/>
+        <path d="M346 204 V158 a10 10 0 0 1 20 0 V204 Z"/>
+        <path d="M164 180 V120 a10 10 0 0 1 20 0 V180 Z"/>
+        <path d="M216 180 V120 a10 10 0 0 1 20 0 V180 Z"/>
+      </g>
+      <path d="M186 240 V212 a14 14 0 0 1 28 0 V240 Z" fill="#FFFFFF" fill-opacity=".2"/>
+      <circle cx="200" cy="84" r="11" fill="none" stroke="#FFFFFF" stroke-opacity=".3" stroke-width="2"/>
+    </svg>
+  </div>
+  <div class="hero-orn" aria-hidden="true">
+    <svg focusable="false">
+      <defs>
+        <pattern id="hornsv" width="48" height="48" patternUnits="userSpaceOnUse">
+          <g style="fill:none;stroke:var(--orn-night);stroke-width:2;stroke-linecap:round;stroke-linejoin:round">
+            <path d="M24 42 C24 32 8 34 8 22 C8 14 14 8 21 10 C27 12 26 20 20 20 C16 20 15 16 18 15"/>
+            <path d="M24 42 C24 32 8 34 8 22 C8 14 14 8 21 10 C27 12 26 20 20 20 C16 20 15 16 18 15" transform="translate(48 0) scale(-1 1)"/>
+          </g>
+        </pattern>
+      </defs>
+      <rect width="100%" height="100%" fill="url(#hornsv)"/>
+    </svg>
+  </div>
+  <div class="wrap hero-in">
+    <div class="plate" aria-hidden="true">
+      <div class="plate-in">
+        <small data-i="pl_top">Nukus</small>
+        <b>51</b>
+        <span class="plate-rule"></span>
+        <small data-i="pl_bot">Boz Awil</small>
+      </div>
+    </div>
+    <h1 data-i="brand_name">51-sonli maktab</h1>
+    <hr>
+    <p class="hero-copy" data-i="hero_copy">Nukus shahri, Boz Awil. Yangiliklar, dars jadvali va aloqa ma’lumotlari bir joyda: o‘quvchilar va ota-onalar maktab hayotidan xabardor bo‘lib turadi.</p>
+    <div class="hero-btns">
+      <a class="btn btn-hero btn-white" href="#jadval"><span data-i="btn_tt">Dars jadvali</span><svg class="ic ic-go" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      <a class="btn btn-hero btn-outline" href="#aloqa"><span data-i="btn_contact">Aloqa</span><svg class="ic ic-go" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+    </div>
+  </div>
+</div>
 
-  --shadow: rgba(11,60,93,.45);
-  --hl: rgba(255,255,255,.2);
-  --rivet: rgba(255,255,255,.5);
+<main>
+  <section id="bosh-info" data-view="bosh">
+    <div class="wrap">
+      <div class="now">
+        <p class="eyebrow" id="today-date">Bugun</p>
+        <p class="now-text" id="now-text">Dars jadvali quyida.</p>
+      </div>
+      <ul class="plain tiles">
+        <li><a class="tile" href="#yangiliklar">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 5h11v14H7a2 2 0 0 1-2-2V5zM16 9h3v8a2 2 0 0 1-2 2M8 9h5M8 13h5"/></svg>
+          <b data-i="nav_news">Yangiliklar</b><span data-i="tile_news_sub">Maktabdagi e’lonlar</span></a></li>
+        <li><a class="tile" href="#haqida">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M3 21h18M5 21V10l7-5 7 5v11M9 21v-6h6v6"/></svg>
+          <b data-i="nav_about">Maktab haqida</b><span data-i="tile_about_sub">Umumiy ma’lumot</span></a></li>
+        <li><a class="tile" href="#jadval">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="4" y="5" width="16" height="15" rx="2"/><path d="M8 3v4M16 3v4M4 10h16"/></svg>
+          <b data-i="nav_tt">Dars jadvali</b><span data-i="tile_tt_sub">Kunlar va vaqtlar</span></a></li>
+        <li><a class="tile" href="#pedagoglar">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="9" cy="8" r="3"/><path d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6M16 11a3 3 0 1 0 0-6M17 14c2.5.4 4 2.7 4 6"/></svg>
+          <b data-i="nav_staff">Pedagoglar</b><span data-i="tile_staff_sub">Bizning jamoa</span></a></li>
+        <li><a class="tile" href="#aloqa">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/></svg>
+          <b data-i="nav_contact">Aloqa</b><span data-i="tile_contact_sub">Manzil va telefon</span></a></li>
+        <li><a class="tile" href="https://www.google.com/maps/search/?api=1&amp;query=Nukus+Boz+Awil" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>
+          <b data-i="tile_map">Xarita</b><span data-i="tile_map_sub">Boz Awil, Nukus</span></a></li>
+      </ul>
+      <p class="note"><b data-i="badge">Namuna</b><span data-i="note_text">Bu sayt boshlang‘ich holatda. Yangiliklar, jadval va pedagoglar ro‘yxati maktabning haqiqiy ma’lumotlari bilan almashtiriladi.</span></p>
+    </div>
+  </section>
 
-  /* night bands stay deep blue in both themes */
-  --night: #071E31;
-  --night-2: #0B3C5D;
-  --on-night: #FFFFFF;
-  --on-night-dim: rgba(255,255,255,.8);
-  --line-night: rgba(255,255,255,.2);
-  --line-night-strong: rgba(255,255,255,.7);
-  --hover-night: rgba(255,255,255,.12);
+  <section id="yangiliklar" data-view="yangiliklar" hidden>
+    <div class="wrap">
+      <h2><svg class="mark" aria-hidden="true"><use href="#horn"/></svg><span data-i="nav_news">Yangiliklar</span></h2>
+      <p class="intro" data-i="news_intro">Maktab hayotidan so‘nggi e’lonlar.</p>
+      <ul class="plain news">
+        <li>
+          <article class="card">
+            <div class="meta"><span class="date" data-i="n1_date">Oktabr 2026</span><span class="tag" data-i="badge">Namuna</span></div>
+            <h3 data-i="n1_title">Birinchi chorak yakunlari</h3>
+            <p data-i="n1_text">Chorak natijalarini sinf rahbarlari ota-onalarga taqdim etadi.</p>
+          </article>
+        </li>
+        <li>
+          <article class="card">
+            <div class="meta"><span class="date" data-i="n2_date">Noyabr 2026</span><span class="tag" data-i="badge">Namuna</span></div>
+            <h3 data-i="n2_title">Ota-onalar yig‘ilishi</h3>
+            <p data-i="n2_text">Yig‘ilish sanasi va vaqti sinf rahbarlari orqali e’lon qilinadi.</p>
+          </article>
+        </li>
+        <li>
+          <article class="card">
+            <div class="meta"><span class="date" data-i="n3_date">Noyabr 2026</span><span class="tag" data-i="badge">Namuna</span></div>
+            <h3 data-i="n3_title">Sinflararo sport musobaqasi</h3>
+            <p data-i="n3_text">Sinflar o‘rtasidagi musobaqa tartibi jismoniy tarbiya o‘qituvchilari tomonidan e’lon qilinadi.</p>
+          </article>
+        </li>
+      </ul>
+    </div>
+  </section>
 
-  --white-hover: #E3EDF3;
-  --orn-night: rgba(255,255,255,.5);
+  <section id="haqida" data-view="haqida" hidden>
+    <div class="wrap">
+      <h2><svg class="mark" aria-hidden="true"><use href="#horn"/></svg><span data-i="nav_about">Maktab haqida</span></h2>
+      <p class="intro" data-i="about_intro">O‘quvchilar, ota-onalar va pedagoglar uchun.</p>
+      <div class="about">
+        <div>
+          <p data-i="about_p1">51-sonli maktab Nukus shahrining Boz Awil hududida joylashgan umumiy o‘rta ta’lim maktabi. Bu yerda o‘quvchilar bilim oladi, kitob o‘qiydi, sport bilan shug‘ullanadi va do‘st orttiradi.</p>
+          <p data-i="about_p2">Saytda dars jadvalini ko‘rish, yangiliklarni kuzatish va maktab bilan bog‘lanish mumkin.</p>
+          <ul class="plain chips" data-i-aria="subjects_label" aria-label="O‘qitiladigan fanlar">
+            <li data-i="s_lang">Ona tili</li><li data-i="s_lit">Adabiyot</li><li data-i="s_math">Matematika</li><li data-i="s_phys">Fizika</li><li data-i="s_chem">Kimyo</li><li data-i="s_bio">Biologiya</li>
+            <li data-i="s_hist">Tarix</li><li data-i="s_geo">Geografiya</li><li data-i="s_eng">Ingliz tili</li><li data-i="s_rus">Rus tili</li><li data-i="s_it">Informatika</li>
+            <li data-i="s_pe">Jismoniy tarbiya</li><li data-i="s_art">Tasviriy san’at</li><li data-i="s_music">Musiqa</li>
+          </ul>
+        </div>
+        <div class="card">
+          <dl class="facts">
+            <div><dt data-i="f_school">Maktab</dt><dd data-i="f_school_v">51-sonli</dd></div>
+            <div><dt data-i="f_addr">Manzil</dt><dd data-i="f_addr_v">Nukus shahri, Boz Awil</dd></div>
+            <div><dt data-i="f_type">Ta’lim turi</dt><dd data-i="f_type_v">Umumiy o‘rta ta’lim</dd></div>
+            <div><dt data-i="f_year">O‘quv yili</dt><dd>2026–2027</dd></div>
+          </dl>
+        </div>
+      </div>
+    </div>
+  </section>
 
-  --cta: #2F6FEB;
-  --cta-hover: #2A62D1;
+  <section id="jadval" data-view="jadval" hidden>
+    <div class="wrap">
+      <h2><svg class="mark" aria-hidden="true"><use href="#horn"/></svg><span data-i="nav_tt">Dars jadvali</span></h2>
+      <p class="intro" data-i="tt_intro">Kunni tanlang. Sariq nuqta bugungi kunni, sariq qator davom etayotgan darsni bildiradi.</p>
+      <p class="cap"><span id="tt-cap">7-sinf · namuna jadval</span> · <span id="tt-day">Dushanba</span></p>
+      <div class="tabs" id="tabs" role="tablist" data-i-aria="days_label" aria-label="Hafta kunlari"></div>
+      <div class="tt-wrap">
+        <table>
+          <thead><tr><th scope="col" data-i="th_lesson">Dars</th><th scope="col" data-i="th_time">Vaqt</th><th scope="col" data-i="th_subject">Fan</th></tr></thead>
+          <tbody id="tt-body"></tbody>
+        </table>
+      </div>
+    </div>
+  </section>
 
-  --f-display: "Bricolage Grotesque", "Trebuchet MS", system-ui, sans-serif;
-  --f-body: "Onest", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  <section id="pedagoglar" data-view="pedagoglar" hidden>
+    <div class="wrap">
+      <h2><svg class="mark" aria-hidden="true"><use href="#horn"/></svg><span data-i="nav_staff">Pedagoglar</span></h2>
+      <p class="intro" data-i="staff_intro">Namuna: ism-sharif va suratlar keyin qo‘shiladi.</p>
+      <ul class="plain staff">
+        <li class="card person"><span class="avatar" aria-hidden="true">M</span><div><h3 data-i="r_dir">Maktab direktori</h3><p class="ph" data-i="ph_name">Ism-sharif kiritiladi</p></div></li>
+        <li class="card person"><span class="avatar" aria-hidden="true">B</span><div><h3 data-i="r_prim">Boshlang‘ich sinflar</h3><p class="ph" data-i="ph_name">Ism-sharif kiritiladi</p></div></li>
+        <li class="card person"><span class="avatar" aria-hidden="true">O</span><div><h3 data-i="r_lang">Ona tili va adabiyot</h3><p class="ph" data-i="ph_name">Ism-sharif kiritiladi</p></div></li>
+        <li class="card person"><span class="avatar" aria-hidden="true">M</span><div><h3 data-i="s_math">Matematika</h3><p class="ph" data-i="ph_name">Ism-sharif kiritiladi</p></div></li>
+        <li class="card person"><span class="avatar" aria-hidden="true">I</span><div><h3 data-i="s_eng">Ingliz tili</h3><p class="ph" data-i="ph_name">Ism-sharif kiritiladi</p></div></li>
+        <li class="card person"><span class="avatar" aria-hidden="true">I</span><div><h3 data-i="s_it">Informatika</h3><p class="ph" data-i="ph_name">Ism-sharif kiritiladi</p></div></li>
+      </ul>
+    </div>
+  </section>
 
-  --fs-s: .875rem;
-  --fs-m: 1rem;
-  --fs-l: 1.25rem;
-  --fs-xl: clamp(1.6rem, 4.5vw, 2.15rem);
-  --fs-hero: clamp(2.4rem, 9vw, 4.25rem);
-}
+  <section id="aloqa" data-view="aloqa" hidden>
+    <div class="wrap">
+      <h2><svg class="mark" aria-hidden="true"><use href="#horn"/></svg><span data-i="nav_contact">Aloqa</span></h2>
+      <p class="intro" data-i="c_intro">Maktab bilan bog‘lanish uchun ma’lumotlar.</p>
+      <dl class="contact">
+        <div class="row">
+          <dt data-i="f_addr">Manzil</dt>
+          <dd id="c-addr" data-i="f_addr_v">Nukus shahri, Boz Awil</dd>
+          <dd class="act"><button class="btn btn-sm" type="button" data-copy="c-addr"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 0 1 2-2h9"/></svg><span class="lbl" data-i="copy">Nusxalash</span></button></dd>
+        </div>
+        <div class="row">
+          <dt data-i="c_tel">Telefon</dt>
+          <dd id="c-tel" data-i="c_tel_v">Raqam kiritiladi</dd>
+        </div>
+        <div class="row">
+          <dt data-i="c_mail">Elektron pochta</dt>
+          <dd id="c-mail" data-i="c_mail_v">Manzil kiritiladi</dd>
+        </div>
+        <div class="row">
+          <dt data-i="c_hours">Ish vaqti</dt>
+          <dd data-i="c_hours_v">Dushanba–Shanba, 08:00–17:00 (namuna)</dd>
+        </div>
+      </dl>
+      <a class="btn btn-primary map-link" href="https://www.google.com/maps/search/?api=1&amp;query=Nukus+Boz+Awil" target="_blank" rel="noopener"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg><span data-i="btn_map">Xaritada ochish</span></a>
+    </div>
+  </section>
+</main>
 
-@media (prefers-color-scheme: dark) {
-  :root:not([data-theme="light"]) {
-    --bg: #0A1820;
-    --surface: #112430;
-    --tint: #163240;
+<footer>
+  <div class="wrap">
+    <p data-i="foot">© 2026 51-sonli maktab · Nukus shahri, Boz Awil</p>
+  </div>
+</footer>
 
-    --ink: #E6EFF2;
-    --muted: #9FB3BF;
-    --line: #23404F;
+<div class="fab" data-view="bosh">
+  <a class="fab-pill" href="#jadval">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="4" y="5" width="16" height="15" rx="2"/><path d="M8 3v4M16 3v4M4 10h16"/></svg>
+    <span data-i="btn_tt">Dars jadvali</span>
+  </a>
+  <a class="fab-round" href="#aloqa" data-i-aria="btn_contact" aria-label="Aloqa">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 5h14a1 1 0 0 1 1 1v9a1 1 0 0 1-1 1H10l-4 3.5V16H5a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1zM8 9h8M8 12h5"/></svg>
+  </a>
+</div>
 
-    --blue: #1B5E86;
-    --blue-ink: #FFFFFF;
-    --blue-hover: #2573A4;
-
-    --sand: #E9B949;
-    --sand-ink: #2A1D00;
-
-    --link: #7CC4E6;
-    --orn: #2F5B70;
-
-    --shadow: rgba(0,0,0,.55);
-
-    color-scheme: dark;
-  }
-}
-
-:root[data-theme="dark"] {
-  --bg: #0A1820;
-  --surface: #112430;
-  --tint: #163240;
-
-  --ink: #E6EFF2;
-  --muted: #9FB3BF;
-  --line: #23404F;
-
-  --blue: #1B5E86;
-  --blue-ink: #FFFFFF;
-  --blue-hover: #2573A4;
-
-  --sand: #E9B949;
-  --sand-ink: #2A1D00;
-
-  --link: #7CC4E6;
-  --orn: #2F5B70;
-
-  --shadow: rgba(0,0,0,.55);
-
-  color-scheme: dark;
-}
-
-*, *::before, *::after {
-  box-sizing: border-box;
-}
-
-html {
-  scroll-behavior: smooth;
-}
-
-html.big {
-  font-size: 125%;
-}
-
-body {
-  margin: 0;
-  background: var(--bg);
-  color: var(--ink);
-  font: 400 var(--fs-m)/1.6 var(--f-body);
-  -webkit-text-size-adjust: 100%;
-}
-
-body::before {
-  content: "";
-  position: fixed;
-  inset: 0 0 auto;
-  height: env(safe-area-inset-top, 0px);
-  z-index: 60;
-  background: var(--night);
-}
-
-body.menu-open {
-  overflow: hidden;
-}
-
-h1, h2, h3 {
-  font-family: var(--f-display);
-  text-wrap: balance;
-}
-
-a {
-  color: var(--link);
-}
-
-a:focus-visible,
-button:focus-visible {
-  outline: 3px solid var(--link);
-  outline-offset: 2px;
-}
-
-.top a:focus-visible,
-.top button:focus-visible,
-.hero a:focus-visible,
-.fab:focus-visible {
-  outline-color: var(--sand);
-}
-
-@keyframes rise {
-  from {
-    opacity: 0;
-    transform: translateY(8px);
-  }
-
-  to {
-    opacity: 1;
-    transform: none;
-  }
-}
-
-[data-view]:not([hidden]):not(.fab) {
-  animation: rise .3s ease-out;
-}
-
-@media (prefers-reduced-motion: reduce) {
-  html {
-    scroll-behavior: auto;
-  }
-
-  * {
-    transition: none !important;
-    animation: none !important;
-  }
-}
-
-.wrap {
-  max-width: 1080px;
-  margin-inline: auto;
-  padding-left: max(16px, env(safe-area-inset-left, 0px));
-  padding-right: max(16px, env(safe-area-inset-right, 0px));
-}
-
-/* header */
+<script src="script.js"></script>
+</body>
+</html>
