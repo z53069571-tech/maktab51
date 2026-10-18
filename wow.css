@@ -133,3 +133,8 @@ th:first-child,td:first-child,th:nth-child(2),td:nth-child(2){text-align:center}
 .contact{max-width:620px;margin-inline:auto}
 @media (max-width:560px){.contact .row{flex-direction:column;align-items:center;text-align:center;gap:4px}.contact dt,.contact dd{flex:none}}
 .map-link{display:flex;width:max-content;max-width:100%;margin:24px auto 0}
+/* menyu */
+.menu>.wrap{width:100%}
+.menu-list{max-width:560px;margin-inline:auto}
+.menu-foot .wrap{text-align:center}
+.menu-foot .socials{justify-content:center}
