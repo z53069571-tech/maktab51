@@ -1,0 +1,99 @@
+/* wow.css: animatsiya + shisha/neon uslubi. style.css dan KEYIN ulanadi.
+   Ortiqcha bo'lsa, index.html dagi shu fayl havolasini o'chirish kifoya. */
+
+:root{--neon:#38BDF8;--violet:#A78BFA}
+
+/* ---------- Umumiy fon nuri ---------- */
+html::before{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;
+  background:
+    radial-gradient(60vmax 45vmax at 100% 0%,rgba(56,189,248,.16),transparent 60%),
+    radial-gradient(55vmax 45vmax at 0% 55%,rgba(167,139,250,.13),transparent 60%),
+    radial-gradient(50vmax 40vmax at 90% 100%,rgba(224,165,38,.12),transparent 60%)}
+
+/* ---------- Sarlavha (shisha + harakatlanuvchi chiziq) ---------- */
+.top{background:rgba(7,30,49,.94);-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px)}
+.top::after{content:"";position:absolute;left:0;right:0;bottom:0;height:2px;
+  background:linear-gradient(90deg,transparent,var(--neon),var(--sand),var(--violet),transparent);
+  background-size:200% 100%;animation:flow 6s linear infinite}
+
+/* ---------- Bosh sahifa (hero) ---------- */
+.hero-in{z-index:1}
+.hero::before,.hero::after{content:"";position:absolute;z-index:0;border-radius:50%;pointer-events:none;will-change:transform}
+.hero::before{width:560px;height:560px;left:-200px;top:-220px;
+  background:radial-gradient(circle,rgba(56,189,248,.5),transparent 65%);animation:drift1 14s ease-in-out infinite alternate}
+.hero::after{width:520px;height:520px;right:-180px;bottom:-200px;
+  background:radial-gradient(circle,rgba(224,165,38,.38),rgba(167,139,250,.22) 45%,transparent 68%);animation:drift2 17s ease-in-out infinite alternate}
+
+.hero-in>*{animation:up .8s cubic-bezier(.2,.7,.2,1) both}
+.hero-in>.plate{animation:pop .9s cubic-bezier(.2,.8,.2,1) both,floaty 5s ease-in-out .9s infinite}
+.hero-in>h1{animation-delay:.12s}
+.hero-in>hr{animation-delay:.22s}
+.hero-in>.hero-copy{animation-delay:.3s}
+.hero-in>.hero-btns{animation-delay:.42s}
+
+.plate{position:relative;overflow:hidden;box-shadow:0 22px 40px -16px rgba(56,189,248,.55),0 0 0 1px rgba(255,255,255,.12)}
+.plate::after{content:"";position:absolute;inset:0;pointer-events:none;
+  background:linear-gradient(110deg,transparent 35%,rgba(255,255,255,.38) 50%,transparent 65%);
+  transform:translateX(-130%);animation:shine 4.5s ease-in-out 1.2s infinite}
+
+.hero h1{background:linear-gradient(90deg,#fff 0%,#7DD3FC 30%,#FDE68A 55%,#fff 80%,#7DD3FC 100%);background-size:250% 100%;
+  -webkit-background-clip:text;background-clip:text;color:#fff;-webkit-text-fill-color:transparent;
+  animation:up .8s cubic-bezier(.2,.7,.2,1) .12s both,flow 8s linear infinite}
+
+.btn-white{animation:ring 2.6s ease-out infinite}
+.btn-hero{transition:transform .2s,box-shadow .2s,background-color .15s,border-color .15s}
+.btn-hero:hover{transform:translateY(-3px);box-shadow:0 14px 28px -10px rgba(56,189,248,.65)}
+
+.sparks{position:absolute;inset:0;pointer-events:none;overflow:hidden}
+.sparks i{position:absolute;top:100%;left:var(--x);width:var(--s);height:var(--s);border-radius:50%;background:#fff;
+  box-shadow:0 0 10px 2px rgba(125,211,252,.85);opacity:0;animation:spark var(--t) linear var(--dl) infinite}
+
+/* ---------- Shisha kartalar va neon ---------- */
+ul.tiles{margin-top:20px}
+.tile,.card,.tt-wrap,.tabs{
+  background:color-mix(in srgb,var(--surface) 72%,transparent);
+  -webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px)}
+
+@property --ang{syntax:"<angle>";inherits:false;initial-value:0deg}
+.now{border:2px solid transparent;
+  background:linear-gradient(var(--surface),var(--surface)) padding-box,
+             conic-gradient(from var(--ang),var(--neon),var(--sand),var(--violet),var(--neon)) border-box;
+  animation:spin 7s linear infinite}
+
+.tile{position:relative;overflow:hidden}
+.tile>*{position:relative}
+.tile::before{content:"";position:absolute;inset:0;pointer-events:none;opacity:0;transition:opacity .25s;
+  background:radial-gradient(190px circle at var(--mx,50%) var(--my,0%),rgba(56,189,248,.26),transparent 62%)}
+.tile:hover::before{opacity:1}
+.tile svg{transition:transform .25s,filter .25s}
+.tile:hover svg{transform:scale(1.15) rotate(-4deg);filter:drop-shadow(0 0 7px var(--neon))}
+.tile:hover{border-color:var(--neon);
+  box-shadow:0 0 0 1px rgba(56,189,248,.55),0 0 30px -6px rgba(56,189,248,.6);
+  transform:perspective(700px) translateY(-4px) rotateX(var(--rx,0deg)) rotateY(var(--ry,0deg))}
+.card:hover{border-color:var(--neon);box-shadow:0 0 26px -8px rgba(56,189,248,.5)}
+.mark{animation:glowMark 3.2s ease-in-out infinite}
+
+/* ---------- Aylantirganda chiqib kelish ---------- */
+.rv{opacity:0;transform:translateY(26px) scale(.97);
+  transition:opacity .6s ease var(--d,0ms),transform .6s cubic-bezier(.2,.7,.2,1) var(--d,0ms)}
+.rv.rv-in{opacity:1;transform:none}
+
+/* ---------- Kadrlar ---------- */
+@keyframes up{from{opacity:0;transform:translateY(26px)}to{opacity:1;transform:none}}
+@keyframes pop{from{opacity:0;transform:scale(.6) rotate(-8deg)}to{opacity:1;transform:none}}
+@keyframes floaty{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
+@keyframes shine{0%,55%{transform:translateX(-130%)}100%{transform:translateX(130%)}}
+@keyframes flow{from{background-position:0 0}to{background-position:200% 0}}
+@keyframes drift1{from{transform:translate(0,0) scale(1)}to{transform:translate(120px,90px) scale(1.25)}}
+@keyframes drift2{from{transform:translate(0,0) scale(1)}to{transform:translate(-110px,-70px) scale(1.2)}}
+@keyframes ring{0%{box-shadow:0 0 0 0 rgba(255,255,255,.55)}70%,100%{box-shadow:0 0 0 14px rgba(255,255,255,0)}}
+@keyframes spark{0%{transform:translate(0,0);opacity:0}10%{opacity:.95}85%{opacity:.5}100%{transform:translate(var(--dx),-90vh);opacity:0}}
+@keyframes spin{to{--ang:360deg}}
+@keyframes glowMark{50%{filter:drop-shadow(0 0 7px rgba(224,165,38,.85))}}
+
+/* ---------- Animatsiyani kamaytirish sozlamasi ---------- */
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none!important;transition:none!important}
+  .sparks{display:none}
+  .rv{opacity:1;transform:none}
+     }
