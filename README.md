@@ -12,9 +12,7 @@ Settings → Pages ga kiring. Source: Deploy from a branch. Branch: main, papka 
 1–2 daqiqadan keyin sayt https://<username>.github.io/<repository>/ manzilida ochiladi.
 Nimani qayerda o‘zgartirish mumkin
 Qator raqamlari shu versiya uchun. Fayl o‘zgargach siljishi mumkin.
-Qo‘ng‘iroq vaqtlari: script.js, 185-qator (BELLS)
-Sinflar soni va harflar: script.js, 186-qator (GRADES, LETTERS)
-Dars jadvali (har sinf uchun alohida): script.js, 188-qatordan (TT). Yangi sinf qo‘shish uchun "7-A": [...] blokini nusxalab, nomini (masalan "5-B") va fanlarini o‘zgartiring. Jadvali kiritilmagan sinfda “jadval hali kiritilmagan” yoziladi. Fan nomi tayyor kalit (s_math) yoki oddiy matn bo‘lishi mumkin
+Qo‘ng‘iroq vaqtlari, sinflar soni, harflar va dars jadvali: data.js, timetable bo‘limi. Yangi sinf qo‘shish uchun "7-A": [...] blokini nusxalab, nomini va fanlarini o‘zgartiring.
 Barcha matnlar va tarjimalar: script.js, 3-qatordan boshlanadi (STR). O‘zbekcha uz, qoraqalpoqcha qq (47-qator), ruscha ru (90-qator), inglizcha en (133-qator)
 Telefon, pochta, ish vaqti: script.js, c_tel_v, c_mail_v, c_hours_v. Har til uchun alohida: 42, 85, 128, 171-qatorlar atrofida
 Ijtimoiy tarmoq havolalari: index.html, 95-qator (<ul class="socials">). Har bir <li class="soc"> ni <a class="soc" href="HAVOLA"> ga almashtiring
