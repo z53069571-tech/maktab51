@@ -5,6 +5,32 @@
 
 window.SCHOOL_DATA = {
 
+  /* ---------- DARS JADVALI ----------
+     bells: qo'ng'iroq vaqtlari [boshlanishi, tugashi], 1-darsdan boshlab.
+     grades: nechta sinf (1 dan shu raqamgacha).  letters: sinf harflari.
+     classes: har sinf uchun 6 kun (dushanba...shanba), har kunda fanlar tartib bilan.
+       Fan: tayyor kalit (s_math, s_lang, s_lit, s_algebra, s_geometry, s_phys, s_chem, s_bio, s_hist,
+            s_geo, s_eng, s_rus, s_it, s_pe, s_art, s_music, s_tech, s_classhour)
+            yoki oddiy matn ("Chizmachilik") yoki { uz:"", qq:"", ru:"", en:"" }.
+       Dam olinadigan (darssiz) kun uchun [] yozing.
+     Yangi sinf: "7-A" blokini nusxalab, nomini ("5-B") va fanlarini o'zgartiring.
+     Jadvali yozilmagan sinfda "jadval hali kiritilmagan" chiqadi. */
+  timetable: {
+    bells: [["08:00","08:45"],["08:55","09:40"],["09:50","10:35"],["10:55","11:40"],["11:50","12:35"],["12:45","13:30"],["13:40","14:25"]],
+    grades: 11,
+    letters: ["A", "B", "D"],
+    classes: {
+      "7-A": [
+        ["s_lang","s_math","s_eng","s_phys","s_hist","s_pe"],
+        ["s_algebra","s_lit","s_bio","s_eng","s_it","s_geo"],
+        ["s_lang","s_geometry","s_rus","s_hist","s_tech"],
+        ["s_math","s_phys","s_lit","s_eng","s_music","s_pe"],
+        ["s_algebra","s_lang","s_geo","s_bio","s_it","s_art"],
+        ["s_geometry","s_rus","s_lit","s_hist","s_classhour"]
+      ]
+    }
+  },
+
   /* ---------- YANGILIKLAR (eng yangisini tepaga yozing) ---------- */
   news: [
     {
