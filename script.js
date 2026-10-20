@@ -174,21 +174,13 @@
   function fmt(s, o) { return s.replace(/\{(\w+)\}/g, function (_, k) { return o[k]; }); }
 
   // ---------- Namuna jadval ----------
-  var BELLS = [["08:00","08:45"],["08:55","09:40"],["09:50","10:35"],["10:55","11:40"],["11:50","12:35"],["12:45","13:30"],["13:40","14:25"]];
-  var GRADES = 11, LETTERS = ["A","B","D"];
-  // Har sinf: "sinf-harf": [dushanba, ..., shanba]. Fan: tayyor kalit (s_math) yoki oddiy matn.
-  var TT = {
-    "7-A": [
-        ["s_lang","s_math","s_eng","s_phys","s_hist","s_pe"],
-        ["s_algebra","s_lit","s_bio","s_eng","s_it","s_geo"],
-        ["s_lang","s_geometry","s_rus","s_hist","s_tech"],
-        ["s_math","s_phys","s_lit","s_eng","s_music","s_pe"],
-        ["s_algebra","s_lang","s_geo","s_bio","s_it","s_art"],
-        ["s_geometry","s_rus","s_lit","s_hist","s_classhour"]
-    ]
-  };
+  // Ma'lumot data.js dagi SCHOOL_DATA.timetable dan olinadi (data.js bu fayldan OLDIN ulangan bo'lishi kerak)
+  var TTD = (window.SCHOOL_DATA && window.SCHOOL_DATA.timetable) || {};
+  var BELLS = TTD.bells || [["08:00","08:45"],["08:55","09:40"],["09:50","10:35"],["10:55","11:40"],["11:50","12:35"],["12:45","13:30"],["13:40","14:25"]];
+  var GRADES = TTD.grades || 11, LETTERS = TTD.letters || ["A","B","D"];
+  var TT = TTD.classes || {};
   var EMPTY = [[],[],[],[],[],[]];
-  var cls = "7-A", PLAN = TT[cls];
+  var cls = "7-A", PLAN = TT[cls] || EMPTY;
 
   function toMin(s) { var a = s.split(":"); return parseInt(a[0], 10) * 60 + parseInt(a[1], 10); }
 
@@ -223,7 +215,10 @@
     return { t: "done" };
   }
 
-  function subj(key) { return STR.uz[key] !== undefined ? t(key) : key; }
+  function subj(key) {
+    if (key && typeof key === "object") return key[lang] || key.uz || "";
+    return STR.uz[key] !== undefined ? t(key) : key;
+  }
 
   function statusText(n, st) {
     if (st.t === "rest") return t("st_rest");
@@ -470,4 +465,5 @@
   applyLang(saved);
   setInterval(tick, 30000);
 })();
+
       
